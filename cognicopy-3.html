@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Cognicopy - Registro Comportamental Cognitivo</title>
+
+    
+
+    <!-- Biblioteca jsPDF para gerar o relatório -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+
+        :root {
+
+            --primary-color: #6c90b2;
+
+            --primary-dark: #527394;
+
+            --bg-color: #fcfcfc;
+
+            --text-color: #70757a;
+
+            --border-color: #e2e2e2;
+
+            --card-bg: #ffffff;
+
+            --pdf-color: #2b567a;
+
+            --delete-color: #dc3545;
+
+        }
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+        html, body {
+
+            width: 100%;
+
+            height: 100%;
+
+            background-color: #eceff1;
+
+            color: #333;
+
+        }
+
+        body {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+        /* Modificado para se comportar como uma aplicação web de tela cheia */
+
+        .app-container {
+
+            width: 100%;
+
+            max-width: 1200px; /* Expande em telas grandes */
+
+            height: 100vh;
+
+            background-color: var(--bg-color);
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            position: relative;
+
+        }
+
+        @media (min-width: 768px) {
+
+            .app-container {
+
+                height: 90vh; /* Deixa uma margem elegante em desktops */
+
+                border-radius: 12px;
+
+            }
+
+        }
+
+        header {
+
+            background: white;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-bottom: 1px solid var(--border-color);
+
+            position: relative;
+
+            flex-shrink: 0;
+
+        }
+
+        .back-btn {
+
+            position: absolute;
+
+            left: 20px;
+
+            font-size: 28px;
+
+            color: var(--primary-color);
+
+            cursor: pointer;
+
+            background: none;
+
+            border: none;
+
+        }
+
+        .profile-toggle-btn {
+
+            position: absolute;
+
+            right: 20px;
+
+            font-size: 22px;
+
+            background: none;
+
+            border: none;
+
+            cursor: pointer;
+
+            color: var(--primary-color);
+
+        }
+
+        .logo {
+
+            font-size: 32px;
+
+            color: var(--primary-color);
+
+            font-weight: 400;
+
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+        }
+
+        .nav-tabs {
+
+            display: flex;
+
+            background: #f1f3f5;
+
+            padding: 6px;
+
+            overflow-x: auto;
+
+            flex-shrink: 0;
+
+            justify-content: center; /* Centraliza as abas no desktop */
+
+        }
+
+        @media (max-width: 767px) {
+
+            .nav-tabs {
+
+                justify-content: flex-start;
+
+            }
+
+        }
+
+        .tab-btn {
+
+            padding: 10px 20px;
+
+            background: none;
+
+            border: none;
+
+            color: #888;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            border-radius: 12px;
+
+            white-space: nowrap;
+
+            transition: all 0.2s ease;
+
+        }
+
+        .tab-btn.active {
+
+            background: white;
+
+            color: var(--primary-color);
+
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+        }
+
+        .content-area {
+
+            flex: 1;
+
+            padding: 30px 40px;
+
+            overflow-y: auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            max-width: 800px; /* Alinha o conteúdo em uma largura legível */
+
+            width: 100%;
+
+            margin: 0 auto;
+
+            -webkit-overflow-scrolling: touch;
+
+        }
+
+        @media (max-width: 500px) {
+
+            .content-area {
+
+                padding: 20px;
+
+            }
+
+        }
+
+        .step-title {
+
+            font-size: 22px;
+
+            color: var(--primary-color);
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            font-weight: 400;
+
+        }
+
+        textarea {
+
+            width: 100%;
+
+            height: 180px;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 8px;
+
+            background: white;
+
+            padding: 16px;
+
+            font-size: 16px;
+
+            color: #444;
+
+            resize: none;
+
+            outline: none;
+
+            line-height: 1.5;
+
+        }
+
+        textarea:focus {
+
+            border-color: var(--primary-color);
+
+        }
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 6px;
+
+            flex-shrink: 0;
+
+        }
+
+        .form-group label {
+
+            font-size: 14px;
+
+            color: var(--primary-dark);
+
+            font-weight: 600;
+
+        }
+
+        .form-group input {
+
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            color: #444;
+
+            outline: none;
+
+            background-color: white;
+
+        }
+
+        .form-group input:disabled {
+
+            background-color: #f1f3f5;
+
+            color: #777;
+
+        }
+
+        .form-group input:focus {
+
+            border-color: var(--primary-color);
+
+        }
+
+        .thought-container {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 16px;
+
+            width: 100%;
+
+        }
+
+        .star-btn {
+
+            background: none;
+
+            border: none;
+
+            font-size: 32px;
+
+            color: #ccc;
+
+            cursor: pointer;
+
+            transition: transform 0.1s ease;
+
+        }
+
+        
+
+        .star-btn:hover {
+
+            transform: scale(1.1);
+
+        }
+
+        .star-btn.active {
+
+            color: #ffca28;
+
+        }
+
+        .options-list {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Grid responsiva para a web */
+
+            gap: 12px;
+
+        }
+
+        .option-item {
+
+            background: white;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 25px;
+
+            padding: 12px 20px;
+
+            font-size: 14px;
+
+            color: var(--text-color);
+
+            cursor: pointer;
+
+            text-align: left;
+
+            transition: all 0.2s ease;
+
+        }
+
+        .option-item:hover {
+
+            border-color: var(--primary-color);
+
+            background-color: #f8fafd;
+
+        }
+
+        .option-item.selected {
+
+            background-color: var(--primary-color);
+
+            color: white;
+
+            border-color: var(--primary-color);
+
+        }
+
+        footer {
+
+            padding: 24px;
+
+            background: white;
+
+            border-top: 1px solid var(--border-color);
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+        }
+
+        .footer-content {
+
+            width: 100%;
+
+            max-width: 800px;
+
+        }
+
+        .save-btn {
+
+            width: 100%;
+
+            background-color: var(--primary-color);
+
+            color: white;
+
+            border: none;
+
+            border-radius: 6px;
+
+            padding: 16px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: background-color 0.2s;
+
+        }
+
+        .save-btn:hover {
+
+            background-color: var(--primary-dark);
+
+        }
+
+        .pdf-btn {
+
+            width: 100%;
+
+            background-color: white;
+
+            color: var(--pdf-color);
+
+            border: 2px solid var(--pdf-color);
+
+            border-radius: 6px;
+
+            padding: 14px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-bottom: 20px;
+
+            transition: all 0.2s;
+
+        }
+
+        .pdf-btn:hover {
+
+            background-color: var(--pdf-color);
+
+            color: white;
+
+        }
+
+        .summary-card {
+
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            border: 1px solid var(--border-color);
+
+            margin-bottom: 16px;
+
+        }
+
+        .summary-title {
+
+            font-weight: bold;
+
+            color: var(--primary-color);
+
+            margin-bottom: 6px;
+
+            font-size: 15px;
+
+        }
+
+        .history-item {
+
+            background: white;
+
+            padding: 16px;
+
+            border-radius: 8px;
+
+            border: 1px solid var(--border-color);
+
+            margin-bottom: 12px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 16px;
+
+            transition: box-shadow 0.2s;
+
+        }
+
+        .history-item:hover {
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+        }
+
+        .history-info {
+
+            flex: 1;
+
+            min-width: 0;
+
+        }
+
+        .history-actions {
+
+            display: flex;
+
+            gap: 10px;
+
+            align-items: center;
+
+        }
+
+        .view-btn {
+
+            background: var(--primary-color);
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 16px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: background-color 0.2s;
+
+        }
+
+        .view-btn:hover {
+
+            background-color: var(--primary-dark);
+
+        }
+
+        .delete-btn {
+
+            background: transparent;
+
+            border: 1px solid var(--border-color);
+
+            color: var(--delete-color);
+
+            padding: 8px 12px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: all 0.2s;
+
+        }
+
+        
+
+        .delete-btn:hover {
+
+            background-color: #fff5f5;
+
+            border-color: var(--delete-color);
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <header>
+
+        <button class="back-btn" onclick="handleBack()">‹</button>
+
+        <div class="logo" onclick="showHistoryScreen()">cognicopy</div>
+
+        <button class="profile-toggle-btn" onclick="showProfileScreen()">👤</button>
+
+    </header>
+
+    <div class="nav-tabs" id="navTabs">
+
+        <button class="tab-btn active" onclick="goToStep(0)">Situação</button>
+
+        <button class="tab-btn" onclick="goToStep(1)">Físico</button>
+
+        <button class="tab-btn" onclick="goToStep(2)">Emoções</button>
+
+        <button class="tab-btn" onclick="goToStep(3)">Pensamentos</button>
+
+        <button class="tab-btn" onclick="goToStep(4)">Ações</button>
+
+    </div>
+
+    <div class="content-area" id="contentArea"></div>
+
+    <footer>
+
+        <div class="footer-content" id="appFooter">
+
+            <button class="save-btn" onclick="nextStep()" id="actionBtn">SALVAR</button>
+
+        </div>
+
+    </footer>
+
+</div>
+
+<script>
+
+let appState = {
+
+    currentStep: 0,
+
+    currentView: "history", 
+
+    situacao: "",
+
+    reacoesFisicas: [],
+
+    emocoes: [],
+
+    pensamento: "",
+
+    pensamentoForte: false,
+
+    acoes: []
+
+};
+
+const defaultDatabase = {
+
+    reacoesFisicas: [
+
+        "Falta de ar", "Tontura", "Sudorese", "Tremores", "Agitação", 
+
+        "Nervosismo", "Palpitações", "Dor no peito", "Sensação de paz", 
+
+        "Cansaço", "Despersonalização", "Desrealização", "Ruborização", 
+
+        "Tensão muscular", "Frio na barriga"
+
+    ],
+
+    emocoes: [
+
+        "Ansioso", "Alegre", "Surpreso", "Amoroso", "Feliz", 
+
+        "Otimista", "Calmo", "Leve", "Orgulhoso", "Excitado", 
+
+        "Constrangido", "Apático"
+
+    ],
+
+    acoes: [
+
+        "Pratiquei atividades físicas", "Pratiquei yoga ou meditação", 
+
+        "Busquei por passeios/lazer", "Consumi álcool", "Fiz compras", 
+
+        "Fumei", "Me isolei socialmente", "Tomei banho", "Me dediquei a hobbies", 
+
+        "Fui dormir", "Não saí da cama", "Busquei atividades \"de adrenalina\"", 
+
+        "Roí as unhas", "Comi mais ou compulsivamente", "Me machuquei propositalmente", 
+
+        "Relações sexuais", "Pesquisei ou planejei suicídio", "Mantive relação sexual desprotegida", 
+
+        "Usei drogas", "Entrei em pânico", "Relaxamento"
+
+    ]
+
+};
+
+function getDatabase() {
+
+    let customs = JSON.parse(localStorage.getItem("cognicopy_custom_options") || '{"reacoesFisicas":[], "emocoes":[], "acoes":[]}');
+
+    return {
+
+        reacoesFisicas: [...customs.reacoesFisicas, ...defaultDatabase.reacoesFisicas],
+
+        emocoes: [...customs.emocoes, ...defaultDatabase.emocoes],
+
+        acoes: [...customs.acoes, ...defaultDatabase.acoes]
+
+    };
+
+}
+
+const steps = [
+
+    { type: "text", title: "Situação", placeholder: "Descreva aqui o que provocou suas emoções. O que aconteceu, onde, com quem e quando?" },
+
+    { type: "list", title: "Como seu corpo reagiu?", key: "reacoesFisicas" },
+
+    { type: "list", title: "O que você está sentindo?", key: "emocoes" },
+
+    { type: "thought", title: "O que passou pela sua cabeça?", placeholder: "Insira um novo pensamento aqui..." },
+
+    { type: "list", title: "O que você fez?", key: "acoes" },
+
+    { type: "summary", title: "Resumo do Registro" }
+
+];
+
+function maskBirthDate(input) {
+
+    let v = input.value.replace(/\D/g, "");
+
+    if (v.length > 8) v = v.substring(0, 8);
+
+    
+
+    if (v.length >= 5) {
+
+        input.value = `${v.substring(0, 2)}/${v.substring(2, 4)}/${v.substring(4, 8)}`;
+
+    } else if (v.length >= 3) {
+
+        input.value = `${v.substring(0, 2)}/${v.substring(2, 4)}`;
+
+    } else {
+
+        input.value = v;
+
+    }
+
+    
+
+    const ageDisplay = document.getElementById("calculatedAgeDisplay");
+
+    if (ageDisplay && v.length === 8) {
+
+        ageDisplay.value = calculateAgeDetailed(input.value);
+
+    } else if (ageDisplay) {
+
+        ageDisplay.value = "";
+
+    }
+
+}
+
+function calculateAgeDetailed(birthDateStr) {
+
+    if (!birthDateStr) return "Não informada";
+
+    const parts = birthDateStr.split("/");
+
+    if (parts.length !== 3) return "Não informada";
+
+    
+
+    const day = parseInt(parts[0], 10);
+
+    const month = parseInt(parts[1], 10) - 1;
+
+    const year = parseInt(parts[2], 10);
+
+    
+
+    if (isNaN(day) || isNaN(month) || isNaN(year)) return "Não informada";
+
+    
+
+    const birthDate = new Date(year, month, day);
+
+    const today = new Date();
+
+    
+
+    if (birthDate > today || year < 1900) return "Data inválida";
+
+    let years = today.getFullYear() - birthDate.getFullYear();
+
+    let months = today.getMonth() - birthDate.getMonth();
+
+    let days = today.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+
+        months--;
+
+        const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+
+        days += prevMonth.getDate();
+
+    }
+
+    if (months < 0) {
+
+        years--;
+
+        months += 12;
+
+    }
+
+    let result = [];
+
+    if (years > 0) result.push(`${years} ano${years > 1 ? 's' : ''}`);
+
+    if (months > 0) result.push(`${months} mê${months > 1 ? 'ses' : 's'}`);
+
+    if (days > 0 || result.length === 0) result.push(`${days} dia${days > 1 ? 's' : ''}`);
+
+    return result.join(", ");
+
+}
+
+function render() {
+
+    const container = document.getElementById("contentArea");
+
+    const tabs = document.getElementById("navTabs");
+
+    const footer = document.getElementById("appFooter");
+
+    const currentDb = getDatabase();
+
+    if (appState.currentView === "profile") {
+
+        tabs.style.display = "none";
+
+        footer.innerHTML = `<button class="save-btn" onclick="saveUserProfile()">SALVAR PERFIL</button>`;
+
+        
+
+        let user = JSON.parse(localStorage.getItem("cognicopy_user") || "{}");
+
+        const currentCalculatedAge = user.birth ? calculateAgeDetailed(user.birth) : "";
+
+        
+
+        container.innerHTML = `
+
+            <h2 class="step-title">Cadastro do Usuário</h2>
+
+            <div class="form-group">
+
+                <label>Nome Completo</label>
+
+                <input type="text" id="userName" value="${user.name || ''}" placeholder="Digite seu nome">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Data de Nascimento</label>
+
+                <input type="text" inputmode="numeric" id="userBirth" value="${user.birth || ''}" placeholder="DD/MM/AAAA" oninput="maskBirthDate(this)">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Idade Calculada</label>
+
+                <input type="text" id="calculatedAgeDisplay" value="${currentCalculatedAge}" disabled placeholder="Será calculada automaticamente">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Telefone</label>
+
+                <input type="tel" id="userPhone" value="${user.phone || ''}" placeholder="(00) 00000-0000">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>E-mail</label>
+
+                <input type="email" id="userEmail" value="${user.email || ''}" placeholder="seu@email.com">
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    if (appState.currentView === "history") {
+
+        tabs.style.display = "none";
+
+        footer.innerHTML = `<button class="save-btn" onclick="startNewRegister()">+ NOVO REGISTRO</button>`;
+
+        
+
+        let logs = JSON.parse(localStorage.getItem("cognicopy_logs") || "[]");
+
+        let user = JSON.parse(localStorage.getItem("cognicopy_user") || "{}");
+
+        
+
+        let html = `<h2 class="step-title" style="margin-bottom:20px;">Olá, ${user.name || 'Paciente'}!</h2>`;
+
+        
+
+        if(logs.length === 0) {
+
+            html += `<p style="text-align:center; color:#999; margin-top:40px;">Nenhum registro encontrado. Clique abaixo para começar!</p>`;
+
+        } else {
+
+            logs.forEach((log, index) => {
+
+                html += `
+
+                    <div class="history-item">
+
+                        <div class="history-info">
+
+                            <strong>${log.data}</strong><br>
+
+                            <span style="font-size:13px; color:#777; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+
+                                ${log.situacao || "Sem descrição"}
+
+                            </span>
+
+                        </div>
+
+                        <div class="history-actions">
+
+                            <button class="view-btn" onclick="viewSavedLog(${index})">PDF</button>
+
+                            <button class="delete-btn" onclick="deleteLog(${index})" title="Excluir Registro">🗑️</button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+        container.innerHTML = html;
+
+        return;
+
+    }
+
+    tabs.style.display = "flex";
+
+    const step = steps[appState.currentStep];
+
+    
+
+    document.querySelectorAll(".tab-btn").forEach((btn, i) => {
+
+        btn.classList.toggle("active", i === appState.currentStep);
+
+    });
+
+    footer.innerHTML = `<button class="save-btn" onclick="nextStep()" id="actionBtn">${appState.currentStep === steps.length - 1 ? 'CONCLUIR E SALVAR' : 'SALVAR'}</button>`;
+
+    if (step.type === "text") {
+
+        container.innerHTML = `
+
+            <h2 class="step-title">${step.title}</h2>
+
+            <textarea id="textInput" placeholder="${step.placeholder}">${appState.situacao}</textarea>
+
+        `;
+
+        document.getElementById("textInput").addEventListener("input", (e) => appState.situacao = e.target.value);
+
+    } else if (step.type === "thought") {
+
+        container.innerHTML = `
+
+            <h2 class="step-title">${step.title}</h2>
+
+            <div class="thought-container">
+
+                <button class="star-btn ${appState.pensamentoForte ? 'active' : ''}" onclick="toggleStar()">★</button>
+
+                <textarea id="textInput" placeholder="${step.placeholder}">${appState.pensamento}</textarea>
+
+            </div>
+
+        `;
+
+        document.getElementById("textInput").addEventListener("input", (e) => appState.pensamento = e.target.value);
+
+    } else if (step.type === "list") {
+
+        let listHtml = `
+
+            <h2 class="step-title">${step.title}</h2>
+
+            
+
+            <div class="form-group" style="flex-direction: row; gap: 8px; margin-bottom: 20px;">
+
+                <input type="text" id="customItemInput" placeholder="Inserir novo item personalizado..." style="flex: 1;">
+
+                <button onclick="addCustomItem('${step.key}')" style="background: #6c90b2; color: white; border: none; padding: 0 20px; border-radius: 8px; font-weight: bold; cursor: pointer;">+</button>
+
+            </div>
+
+            <div class="options-list">
+
+        `;
+
+        
+
+        currentDb[step.key].forEach(item => {
+
+            const isSel = appState[step.key].includes(item);
+
+            listHtml += `<button class="option-item ${isSel ? 'selected' : ''}" onclick="toggleOption('${step.key}', '${item}')">${item}</button>`;
+
+        });
+
+        container.innerHTML = listHtml + `</div>`;
+
+    } else if (step.type === "summary") {
+
+        container.innerHTML = `
+
+            <h2 class="step-title">${step.title}</h2><br>
+
+            <button class="pdf-btn" onclick="gerarPDF(appState)">📄 BAIXAR PDF IMEDIATAMENTE</button>
+
+            <div class="summary-card"><div class="summary-title">Situação</div><div>${appState.situacao || "Não informada"}</div></div>
+
+            <div class="summary-card"><div class="summary-title">Físico</div><div>${appState.reacoesFisicas.join(", ") || "Nenhum"}</div></div>
+
+            <div class="summary-card"><div class="summary-title">Emoções</div><div>${appState.emocoes.join(", ") || "Nenhuma"}</div></div>
+
+            <div class="summary-card"><div class="summary-title">Pensamento</div><div>${appState.pensamento || "Não informado"}</div></div>
+
+            <div class="summary-card"><div class="summary-title">Ações</div><div>${appState.acoes.join(", ") || "Nenhuma"}</div></div>
+
+        `;
+
+    }
+
+}
+
+function addCustomItem(key) {
+
+    const input = document.getElementById("customItemInput");
+
+    const valor = input.value.trim();
+
+    
+
+    if (valor === "") return;
+
+    let customs = JSON.parse(localStorage.getItem("cognicopy_custom_options") || '{"reacoesFisicas":[], "emocoes":[], "acoes":[]}');
+
+    
+
+    if (!defaultDatabase[key].includes(valor) && !customs[key].includes(valor)) {
+
+        customs[key].unshift(valor);
+
+        localStorage.setItem("cognicopy_custom_options", JSON.stringify(customs));
+
+    }
+
+    
+
+    if (!appState[key].includes(valor)) {
+
+        appState[key].push(valor);
+
+    }
+
+    
+
+    input.value = "";
+
+    render();
+
+}
+
+function showProfileScreen() { appState.currentView = "profile"; render(); }
+
+function saveUserProfile() {
+
+    const userData = {
+
+        name: document.getElementById("userName").value.trim(),
+
+        birth: document.getElementById("userBirth").value.trim(),
+
+        phone: document.getElementById("userPhone").value.trim(),
+
+        email: document.getElementById("userEmail").value.trim()
+
+    };
+
+    localStorage.setItem("cognicopy_user", JSON.stringify(userData));
+
+    alert("Dados cadastrais salvos!");
+
+    showHistoryScreen();
+
+}
+
+function startNewRegister() {
+
+    appState.currentView = "register"; appState.currentStep = 0; appState.situacao = "";
+
+    appState.reacoesFisicas = []; appState.emocoes = []; appState.pensamento = "";
+
+    appState.pensamentoForte = false; appState.acoes = [];
+
+    render();
+
+}
+
+function showHistoryScreen() { appState.currentView = "history"; render(); }
+
+function handleBack() {
+
+    if(appState.currentView !== "register") showHistoryScreen();
+
+    else if(appState.currentStep > 0) { appState.currentStep--; render(); }
+
+    else showHistoryScreen();
+
+}
+
+function nextStep() {
+
+    if (appState.currentStep < steps.length - 1) {
+
+        appState.currentStep++; render();
+
+    } else {
+
+        let logs = JSON.parse(localStorage.getItem("cognicopy_logs") || "[]");
+
+        logs.push({
+
+            data: new Date().toLocaleDateString('pt-BR') + " " + new Date().toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'}),
+
+            situacao: appState.situacao, reacoesFisicas: appState.reacoesFisicas, emocoes: appState.emocoes,
+
+            pensamento: appState.pensamento, pensamentoForte: appState.pensamentoForte, acoes: appState.acoes
+
+        });
+
+        localStorage.setItem("cognicopy_logs", JSON.stringify(logs));
+
+        alert("Registro salvo no histórico!");
+
+        showHistoryScreen();
+
+    }
+
+}
+
+function deleteLog(index) {
+
+    if (confirm("Tem certeza que deseja excluir este registro permanentemente?")) {
+
+        let logs = JSON.parse(localStorage.getItem("cognicopy_logs") || "[]");
+
+        logs.splice(index, 1);
+
+        localStorage.setItem("cognicopy_logs", JSON.stringify(logs));
+
+        render();
+
+    }
+
+}
+
+function goToStep(idx) { appState.currentStep = idx; render(); }
+
+function toggleStar() { appState.pensamentoForte = !appState.pensamentoForte; render(); }
+
+function toggleOption(key, item) {
+
+    let arr = appState[key]; let idx = arr.indexOf(item);
+
+    if(idx > -1) arr.splice(idx, 1); else arr.push(item);
+
+    render();
+
+}
+
+function viewSavedLog(index) {
+
+    let logs = JSON.parse(localStorage.getItem("cognicopy_logs") || "[]");
+
+    gerarPDF(logs[index]);
+
+}
+
+function gerarPDF(dados) {
+
+    const { jsPDF } = window.jspdf;
+
+    const doc = new jsPDF();
+
+    let user = JSON.parse(localStorage.getItem("cognicopy_user") || "{}");
+
+    const calculadoIdade = calculateAgeDetailed(user.birth);
+
+    
+
+    doc.setFillColor(108, 144, 178); doc.rect(0, 0, 210, 32, 'F');
+
+    doc.setTextColor(255, 255, 255); doc.setFont("Helvetica", "bold"); doc.setFontSize(24); doc.text("cognicopy", 15, 22);
+
+    doc.setFontSize(10); doc.setFont("Helvetica", "normal"); doc.text("Relatório de Registro Comportamental Cognitivo", 15, 28);
+
+    
+
+    doc.setFillColor(241, 243, 245); doc.rect(15, 40, 180, 28, 'F'); doc.setDrawColor(226, 226, 226); doc.rect(15, 40, 180, 28, 'S');
+
+    doc.setTextColor(50, 50, 50); doc.setFontSize(10);
+
+    doc.setFont("Helvetica", "bold"); doc.text("Nome:", 20, 47); doc.setFont("Helvetica", "normal"); doc.text(`${user.name || "Não cadastrado"}`, 33, 47);
+
+    
+
+    doc.setFont("Helvetica", "bold"); doc.text("Nascimento:", 115, 47); doc.setFont("Helvetica", "normal"); doc.text(`${user.birth || "Não informado"}`, 138, 47);
+
+    
+
+    doc.setFont("Helvetica", "bold"); doc.text("Telefone:", 20, 54); doc.setFont("Helvetica", "normal"); doc.text(`${user.phone || "Não cadastrado"}`, 38, 54);
+
+    doc.setFont("Helvetica", "bold"); doc.text("Idade Atual:", 115, 54); doc.setFont("Helvetica", "normal"); doc.text(`${calculadoIdade}`, 136, 54);
+
+    
+
+    doc.setFont("Helvetica", "bold"); doc.text("E-mail:", 20, 61); doc.setFont("Helvetica", "normal"); doc.text(`${user.email || "Não cadastrado"}`, 35, 61);
+
+    doc.setFont("Helvetica", "bold"); doc.text("Data Reg.:", 115, 61); doc.setFont("Helvetica", "normal"); doc.text(`${dados.data || new Date().toLocaleDateString('pt-BR')}`, 135, 61);
+
+    let y = 82;
+
+    const imprimirSecao = (titulo, conteudo) => {
+
+        doc.setFont("Helvetica", "bold"); doc.setFontSize(12); doc.setTextColor(82, 115, 148); doc.text(titulo, 15, y); y += 6;
+
+        doc.setFont("Helvetica", "normal"); doc.setFontSize(11); doc.setTextColor(40, 40, 40);
+
+        const linhas = doc.splitTextToSize(conteudo || "Nenhum dado registrado nesta etapa.", 175);
+
+        doc.text(linhas, 15, y); y += (linhas.length * 6) + 10;
+
+    };
+
+    imprimirSecao("1. SITUAÇÃO OCORRIDA", dados.situacao);
+
+    imprimirSecao("2. REAÇÕES FÍSICAS E SINTOMAS", dados.reacoesFisicas.join(", "));
+
+    imprimirSecao("3. ESTADO EMOCIONAL", dados.emocoes.join(", "));
+
+    imprimirSecao("4. PENSAMENTO", dados.pensamento + (dados.pensamentoForte ? " (Marcado como Pensamento Forte ★)" : ""));
+
+    imprimirSecao("5. AÇÕES E COMPORTAMENTOS GERADOS", dados.acoes.join(", "));
+
+    doc.save(`cognicopy-registro-${(dados.data || 'novo').replace(/[\/ :]/g, '-')}.pdf`);
+
+}
+
+showHistoryScreen();
+
+</script>
+
+</body>
+
+</html>
