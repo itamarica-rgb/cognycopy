@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>JULIA ROTTA COGNI</title>
+
+    <meta name="theme-color" content="#6c90b2">
+
+    <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%20%22JULIA%20ROTTA%20COGNI%22%2C%20%22short_name%22%3A%20%22Cogni%22%2C%20%22description%22%3A%20%22Registro%20Comportamental%20Cognitivo%22%2C%20%22start_url%22%3A%20%22.%22%2C%20%22display%22%3A%20%22standalone%22%2C%20%22background_color%22%3A%20%22%23eceff1%22%2C%20%22theme_color%22%3A%20%22%236c90b2%22%2C%20%22icons%22%3A%20%5B%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAHhUlEQVR4nO2dW3KcMBBFG1e2l6W4shZXluIFOh8JMR7DgNDrdvc5v6kaJPU9asEw8WJifHx8fMweA/RlWZZl9hhWpg6EsMPKLCmGX5TQwxkjZRh2IYIPpYwQofsFCD7U0lOEbh9M8KE1PURo/oEEH3rTUoSXVh9kRvhhDC1z1sQkgg%2BzqO0G1R2A8MNMavNXJQDhBwVqcnhbAMIPStzN4y0BCD8ocieXxQIQflCmNJ9FAhB%2B8EBJTi8LQPjBE1fzekkAwg8euZLbUwEIP3jmLL9NX4UA8MZTAdj9IQLPcnwoAOGHSBzlmSMQpGZXAHZ/iMherukAkJpvArD7Q2Qe800HgNR8%2BTUNu397Xt/eqz/j96%2BfDUYCW9ZfkiFAI1oEvRTEuM83AQh/GTMCfwZClLFsf1CMAOcohv4IZDgHAS7gKfRHIMM%2B/wUg/F%2BJEPojkOErCLAhcvAfQYS/IIDlCv4j2UVILUDm4D%2BSVYSUAhD8Y7KJ8EL4YUu29VmyCJCtsC3I0A1SvAxH%2BO%2BRYd1Cd4AMBRxF1G4QVgCl8NeEJ8o8VAkpwMzQjAhJ9PmNJJQAWV9JzjrvFoQRYGQIlIvPOpQRQoARRfdYbNblHPcC9C6y9wKbsUbPcC1Az8J6LuoRrNd33ArQq5heC1kCa/eJy2%2BCKWAdveap9J3FVdx1gB6LnCX4e2RfT1cdIHuxetBj/p46gZsO0HpRswd/j4xr7KoDtMJDYWaQcV1cCNByZ8pY5BJaro%2BHo5C8AIR/PJkkkL4HaLV4BP8%2B0Wsg3wFqUV14L0RfP1kB%2BG/FdWixjqpHIUkBVBcL6lCsq6QALWD3b0vU9ZQTgKOPLhGPQlICEH59okkgJUAthH8MkdZZRgClXQH6o1JvGQFqibQreSDKeksIULsbRCmGN2rXXaELSAgAMIvpArD7%2B8Z7F5guQA2EXwPPdZgqwGz7QYOZOXDbATzvOhHxWg%2B3AgC0YNoPYmraXq%2Bv473uYnfoNf/ZdS3lx/ArTuZZgdZ/iyxC9vk/4u4INOKvrUS9OR8xf2/yTBFgRsBKrxlNAg/zn3FNdx3gDncXNooE2ef/DFcCeGuvWfFUp%2BECjN5Vaq/nfRf0Nv/R13PVAQBa40YAT20V/NTLjQAAPRgqgPfzNIxhZE7Cd4DaVuyllR%2BRff5nuBAgehGi4qFuLgSo5W4hPBTwCtnn/4wUApiVFzNa8bPP/4g0AphdL2rU4mef/x7Dfg%2Bg9oYhvwcYM3%2B1uj8iL0CmUEZFufapjkAAjyAApAYBIDUIAKlBAEgNAkBqEABSgwCQGgSA1CAApAYBIDUIAKlBAEgNAkBq5AXgf5LwjXr9hgnAe/1Qwqi8yHcAgJ4gAKQGASA1LgRQv5GCfTzUzYUAAL0YKgBPguAKI3NCB4DUuBHAw3kSPvFSLzcCAPRguADcB8AzRufDVQfw0laz46lOrgQAaM0UATgGwR4zcuGuA3hqrxnxVh93AgC0ZJoANe3O2y6TBfU/hrEHHeAGr2/vchIqjskDw/5CzB61BRu5axyNVeGGXmFsnmq55ceUq/7j96%2Bf0ruW8tiusI5fQdJnzBzf1A5gprdz3BnPzAKWjlftD%2BGZJRfATGMBFcZQisKYFcZQAzfBkBoJAWp3gRZndYUxjLweu/9fJARogcIN66gxZJprb2QEUNgNWu2KvcLR6rOjrHULZARogdKu1Hoskec2E4mnQFsUdrjWBVZ67UNhbVR2fzNBAcw0FrnXLndlXDOv/QyFurRm6jfBPXl9e5dbbDO/xwev4z5D8h5AIbgKY2iJwnwUxvCIpABmPKduCUefY2QFaEV2CRTCr4zkTfCWlgVQehozApX5Km8i8h2g5eJ5/MXSXQj/NeQFMEOCUgj/dVwI0JrIEqiE3wvy9wBbehQoSmDU5qG%2BUay46gBqv2ZSKTLhv4%2BrDrCi%2BKrAjG6gOF5P4TdzKoCZbgFHiKA6Rm/hN3MsgFnfsCl8E71FbTyPeAy/mXMBzPrvuLMewao8%2Br2C1/CbBRDAzMexYwasyzkhBDAbexOqXHTWoYwwApj5exLTiqzzbkEoAVZmfkE1IhjR5zeSkAKY8S1tD6KF3yywAGZa4fFOxPCbBRdgBRHuEzX4K67eBbpL9CL2IsO6pegAW%2BgG52QI/srLsizL7EGMJFNx75BtfRYzs2xdYIVu8Em24K%2BkFmAlswhZg7%2BCABsyiZA9%2BCsIsENkEQj%2BV/7fACPBPhFkIPT7LNsnQAhwjicZCP05CFCBogyEvozl8TsAJLgPryT7Ys0%2BAnQm8v%2Bs7JldAcyQAOKzPfmkeBkO4IhvAmR7Nwhy8ZhvOgCkZlcAugBEZC/XdABIzaEAdAGIxFGen3YAJIAIPMsxRyBIzakAdAHwzFl%2BL3UAJACPXMnt5SMQEoAnrua16B4ACcADJTktvglGAlCmNJ%2B3ngIhAShyJ5e3H4MiAShxN49V3wMgAShQk8PqL8KQAGZSm7%2Bm4eXXZDCKVhtv01ch6AYwgpY56xZYugG0pscG233HRgSopefJYtiRBRGglBFH6uFndkSAM0beS069aUUGWJn1AOUPWiD9%2B2OxhFsAAAAASUVORK5CYII%3D%22%2C%20%22sizes%22%3A%20%22192x192%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%2C%20%7B%22src%22%3A%20%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAYaElEQVR4nO3dW24jx5YF0JTh6XkohsdieCgeoPrDrasqligymfE4j7W%2BGmh032RkxD6bQdn37SCk9/f3993PADDK29vb2%2B5n4GdeyCYGPMAnBWE9C76AYQ9wnlIwl8WdwMAHGE8hGMtiDmDgA6ynEFxj8V5k6APEoQycZ8FOMPQB4lMGnmORHjD0AfJSBu6zMHcY/AB1KAK/siA/MPQB6lMG/mMRDoMfoKPuRaD1hzf4AehaBFp%2BaIMfgFvdikCrD2vwA/BIlyLQ4kMa/ACcVb0I/Lb7AWYz/AF4RfX5UbbdVH9xAKxT8Tag3Acy%2BAGYpVIRKPUTgOEPwEyV5kyJJlPphQCQQ/bbgPQ3AIY/ADtknz%2BpC0D2xQcgt8xzKOX1ReYFB6CmbD8JpLsBMPwBiCjbfEpVALItLgC9ZJpTKa4rMi0oABxH/J8Ewt8AGP4AZBR9foUuANEXDwC%2BE3mOhS0AkRcNAJ4VdZ6FLABRFwsAXhFxroUrABEXCQCuijbfQhWAaIsDACNFmnNhCkCkRQGAWaLMuxAFIMpiAMAKEebe9gIQYREAYLXd829rAdj94QFgp51zcFsBMPwBYN883FIADH8A%2BLRjLi4vAIY/APxq9XxcWgAMfwC4b%2BWcXFYADH8AeGzVvFxSAAx/AHjeirm5/d8DAACsN70A%2BPYPAOfNnp9TC4DhDwCvmzlHpxUAwx8Arps1T/0NAAA0NKUA%2BPYPAOPMmKvDC4DhDwDjjZ6vQwuA4Q8A84ycs/4GAAAaGlYAfPsHgPlGzdshBcDwB4B1RsxdPwEAQEOXC4Bv/wCw3tX56wYAABq6VAB8%2BweAfa7M4ZcLgOEPAPu9Oo/9BAAADb1UAHz7B4A4XpnLbgAAoKHTBcC3fwCI5%2Bx8dgMAAA2dKgC%2B/QNAXGfmtBsAAGjo6QLg2z8AxPfsvHYDAAANPVUAfPsHgDyemdtuAACgIQUAABp6WABc/wNAPo/m9%2B%2BrHgSY68%2B//132n/XPX38s%2B88C5nj77n/p2z/st3Kwj6YowH5vb29fznoFAALIPORfpRzAGgoABNFx2D9LKYDxThcAwx%2BuM%2ByvUwrguq9KgAIAAxn48ykEcJ4CAIMZ%2BPspBPDY0wXA8IevGfjxKQTwtdsSoADAA4Z%2BXsoAfFIA4AmGfj3KAN09LACGP10Z%2Bn0oA3T1YwlQAGjN0EcZoBMFgPYMfm4pAnSgANCSoc%2BzlAGqulsADH8qMvh5lSJARR8lQAGgJEOf0ZQBqlAAKMngZzZFgOwUAEox%2BFlNESCrXwqA4U9GBj%2B7KQJk9PbjXwMqAGRi8BONIkAmCgDpGPxEpwiQgQJAGgY/2SgCRKYAEJ7BT3aKABH9rwAY/kRj8FONIkA0CgChGPxUpwgQxW%2B7HwA%2BGP50YJ8ThRsAthOIdOU2gJ0UALYx%2BOE/igA7%2BAmALQx/%2BOQ8sIMbAJYSdPA9twGs4gaAZQx/eMw5YZU33/6ZTaDBa9wGMJMbAKYy/OF1zg8zuQFgCsEFY7kNYDQ3AAxn%2BMN4zhWjKQAMJaRgHueLkfwEwBCCCdbykwBXuQHgMsMf1nPuuMoNAJcIoVhWfCv0zmNxE8CrFABeYgislyno7Y/1Mu0PYlAAOE24z1U5yO2duSrvHcZTADhFgI/XObTtp/E67yfOUQB4mrC%2BTjg/Zp9dZ5/xDAWAhwTyNcL4dfbeNfYe31EA%2BJYAPk/ozmM/nmc/co8CwF3C9nlCdj3783n2J19RAPiScH1MqMZhvz5mv3JLAeAXwvQ%2BIRqf/Xuf/cuPFAB%2BIjy/JjjzsZe/Zi/zQQHgfwTmzwRlHfb2z%2BxtjkMB4BCOt4RjXfb6z%2Bz13hSA5gTiJ2HYh33/yb7vSwFoTAj%2BRwD25Qz8xxnoSQFoSvAJPT45D85DRwpAQ93DTtBxj7PhbHSiADTTOeCEG89yTuhAAWika6gJNF7lzFCZAtBExyATYozi/FCRAtBAt/ASXMziLFHJb7sfAEYSWMxkf1GJG4DiunxjEcys5myRnQJQWIeAEk7s5pyRlZ8AihJKsEaHfdghTzpyA1BQ9cPaIXDJydkjEzcAxQgg2Kf6/qyeL90oAIVUP5zVw5Uaqu/T6jnTiZ8Aiqh8KKsHKnU5l0TmBoDQhAyZ2b9EpgAUUPVbhvCkgqr7uGrudOIngOQqHsKqgQnOK5G4AUhMmEAuFfd3xRzqQgFIquKhqxiOcKviPq%2BYRx0oAIRQMRThHvudCPwNQEKV2rYgpDvnmV3cACQjLKCWSuegUj51oAAkUulwVQo9uKrSeaiUU9UpACxXKexgFOeC1RSAJKq0aiEH91U5H1XyqjoFIIEqh6lKuMFMVc5JldyqTAEIrsohqhJqsEKV81Ilv6pSAJiuSpjBSs4NsykAgVVoz0IMXlfh/FTIsaoUgKAqHJoK4QW7VThHFfKsIgWAKSqEFkThPDGDAhBQ9rYsrGC87Ocqe65VpAAEk/2QZA8piCz7%2Bcqeb9UoAAyTPZwgA%2BeMURSAQDK3Y6EE62Q%2Bb5lzrhoFIIjMhyJzGEFWmc9d5ryrRAHgkswhBNk5f1yhAASgDQPdyL39FABe5tsH7Occ8ioFYLOsLVjoQBxZz2PW/KtCAdgo6%2BbPGjZQWdZzmTUHK1AAOCVryEAHzidnKACbaL0A/5GHeygAPM23C4jPOeVZCsAGGduuUIE8Mp7XjLmYnQLAQxnDBLpzbnlEAVhMywX4mnxcSwHgW75FQF7OL99RABbK1m6FB%2BSX7Rxny8nMFAC%2BlC00gPucZ76iACyi1QI8R16uoQDwC98WoB7nmlsKwAKZ2qyQgLoyne9MuZmVAgAADSkAk2VqsZm%2BHQCvyXTOM%2BVnRgoAADSkAEyUqb1m%2BlYAXJPpvGfK0WwUAFKFATCGc48CMInWCjCGPJ1DAWjOtwDoy/nvTQEAgIYUgAmyXFdp/0CWHMiSq5koAADQkAIwWJaWmqX1A/NlyYMs%2BZqFAgAADSkADWVp%2B8A6cqEfBWAg11MAc8nZcRSAZrR84B750Mvvux%2BgCq10nGfWUlARjX27zp9//2stB3h7f39/3/0QFWQoAFEPzIi1i/rZqKvyvpVnPbgBYJuRIfPx/0soMJt9SxVuAAbQls9ZsV6RPi81dNu3cq0%2BfwTIUqtCJUN4kYd9S0UKQANRWvLqcBOmjNB130bJDebxE8BFUQ7rd3Yf5AhrtHsNyMe%2BjbEGj%2Bxeo8zcABS3%2B3BECZAoz0EOUfbL7ufYnR/MpQAAQEMKwAW723l00dYn2vMQU7R9Eu15orE%2Br1MACtt5fRf1UEZ9LmKIuj92PpefAepSABguaoh%2BiP587BF9X0R/PvJRAF4U/TBq7cAo0fMkeh5HpQAwVJaDmOU5WSPLfsjynOSgAABAQwpAQbuu67J9O8n2vMyRbR/set7oPwNwngLwgmyBAVCdXD5PAQCAhhSAYlzTAbPIl1oUAIbIev2W9bkZI%2Bv7z/rcxKIAnOTgAcQkn89RAApxPQfMJmfqUAAAoCEFAAAaUgBO8PsSQGxy%2BnkKQBF%2BlwNWkTc1KAAA0JACAAANKQAFRLiOi/AMr8j63IyR9f1HeO4Iz8A1CsCT/GEJQA7y%2BjkKAAA0pAAAQEMKAMNk%2B00w2/MyR7Z9kO15iUsBSE4YALvIn9wUgCf4g5LnZQmELM/JGln2Q5bnjEBuP6YAAEBDCgDDRf%2BWEv352CP6voj%2BfOSjACQWORCiPlvU5yKGqPsj6nMdR%2Bxn43sKANNEC4Zoz0NM0fZJtOehDgUAABpSAJgqyreXKM9BDlH2S5TnoKa39/f3990PEVnkf5QkWzjsWMtsa0Q89u1jcjInNwAss/ogOviMYN9SlQKQVNaQWPXcWdeHmOzb72V97u5%2B3/0A9PMRFjOuDQURs9i3VKMAsM3IQBWgrGLfUoUCwHa3IfhMsApOdrNvyU4BIBwhSUb2Ldn4I0AAaEgBAICGFAAAaEgB%2BEbkf7sVAI/J8fsUgIT8sREQjVzKRwEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAEAgIYUAABoSAFI6M%2B//939CAA/kUv5KADf%2BOevP3Y/AgAXyPH7FAAAaEgBAICGFAAAaEgBAICGFAAAaEgBAICGFAAAaEgBSMq/dAOIQh7lpAAAQEMKwAP%2BLVIAOcnv7ykAANCQAgAADSkAANCQApCYv7wFdpNDeSkAANCQAgAADSkAT/CPkgDkIrcfUwCS8/sbsIv8yU0BAICGFAAAaEgBAICGFIAn%2BYMSgBzk9XMUgAL8IQ6wmtzJTwEAgIYUAABoSAEownUcsIq8qUEBOMEflgDEJqefpwAAQEMKAAA0pAAU4nc5YDY5U4cCcJLflwBiks/nKAAA0JACUIzrOWAW%2BVKLAgAADSkAL/A7E0Ascvk8BaAg13TAaHKlHgUAABpSAACgIQXgRdF/b3JdB4wSPU%2Bi53FUCgAANKQAFBa9tQPxyZG6FIALXDsB7CWHX6cAAEBDCkBxru%2BAV8mP2hSAi1w/Aewhf69RABrQ4oGz5EZ9CgAANKQADJDhGkqbB56VIS8y5G50CgAANKQANJKh1QN7yYk%2BFIBBXEcBrCFvx1AAmtHugXvkQy8KwEBaKcBccnYcBaAhLR%2B4JRf6%2BX33A0BGt2HpW8l6P74D6w/nvb2/v7/vfohqsjRpoXned%2B/Weq7jPYwls3pyAwAPZAlH/uNmAJ7jBmCSLENDQH7t1fdnPed75d14L/fJqr7cAMD/yxKEnOdWAH7lBmCSTMOkeyCOflfd13Mm72osOdWbG4BJ/vnrj1SHqxvvhuNwM5CFdzOHG4CJMg2ZDgds5fvosJ6rrXp/Xd6dfEIBmMwh22vX%2Bldcy912vMuq71EucRx%2BAqCo3QH359//Cq6Bdr1PPxFQmRuABXYPozMyh1zEdc68nlF4r2NFXM97Mq9zBm4ASC1TmFHHx74zoMjMDcAimQZVhlCznj14z2NZT37kvw2QX2QIiUzhkGE9I8q0bhn2Y6b1ZA0FYJEMAcE8wvcc69WbvFxDAeBLGQJYSBBBhn2Y4TyzngKwUIag%2BJHQGMt6Psc6jZVtPbPlZGYKAN/KFh7RWc/vWZ%2BxrCffUQAW027HyrieQvlrGdcl4/6LzHqupQDwUMZgjs6a/sx6jGdNecS/B2CTjIczcjvPuJ4fIq/rbN7bHBnXNfJ6VuUGgKdlDJUMuq5r1889m3XlWQrAJtruWNnXs1toZ/%2B82fdbNNZzDwWAU7IHd2R//v1v%2BfXt8Bl3sracoQBslLX1Rg2ZrOt5K%2Br6XlXlc0XdZ1nXN%2Bp6dqAAbJZ182cNmywqfVOu9Fmiyrq%2BWfOvCgWAl0UMnWqBknl4Zn72eyLur2przDoKQAARQyWziuuZaZhmetYzKu6rnaznfgoAl1QM%2BsgiD9fIz1aV9eYK/yKgQDIf5ohtPvN6nrFz7a3xPpnXPuJ6dqQABONQj5N5LV%2B14h1Y1/0yv4Noa9mZAhBM5oN9HPEOd/b1HOHKO7F%2B9vRo0dazMwUgIAd8rOzryT728ljR1rM7fwQYUPZDEi2ksq8ne0TbN9HO1VnR1hMFgEmyhxVE4jwxgwIQVIW2HCm0Kqwn60TaL5HO0asirSefFIDAKhyaSOFVYT2ZL9I%2BiXR%2BXhVpPfmZAsB0kUJMGPGdSPsj0rmhJgUguEiBdIUwg%2BdVOS9V8qsqBSCBKocoSqhVWU/GirIvopyTq6KsJ/cpAElUOUxRwq3KejJGlP0Q5XxcFWU9%2BZ4CwHJRQk5IcRxx9kGUc0EfCkAiUYJqhChhV2lNOS/K%2B49yHkaIsqY8pgAkU%2BlwRQm9SmvK86K89yjnYIQoa8pz/HcBJFUpNI4jRnBUW1Pus9/Gi7CmnOMGgBAihKEA6yHCe46w30EBSCpCiI0WIRQrriufIrzfCPt8tAjrynkKQGIVD12EcKy4rsR4rxH292gR1pXX%2BBuAAiqGynHsD5aq69qRvTTH7nXlGjcABVQ9hLtDs%2Bq6drP7Pe7ex7PsXleuUwAIbXd4/vPXH4IuqQjvbvf%2Bhe/4CaCQ6mEjzHmWvTLX7vVlDDcAhVQ/lLtDtfr6VrH7Pe3ep7PtXl/GcQNQkACar/oaZ2RfzBdhjRlHASiqehAdx/4w6rDGWdgL8%2B1eY8bzE0BRHQ7r7tDtsMYZ7H4Pu/fhCrvXmDncABTXIZyOY39AdVnnSLzzNXavM/MoAA10Carj2B9WndZ6F%2B94nd1rzVx%2BAqCU3eEsMOfavb679xeM5AagiY7BZVjU4V2ut3vNmU8BaKRjiB3H/iDruu4jeHd77F531lAAmukaaMexP9Q6r/1Z3tU%2Bu9eedRSAhjqH23HsD7ju6/8d72av3evPWgpAU92D7jhihJ334D1EEeE9sJYC0JjQ%2B0%2BE4Ov4Lqx7HBHeBespAM0JwE9RQrDyO7HG8UR5J6ynACAMb0QKxArvxnrGFendsJ4CwP8Ix59FDMcM78i6xRfxHbGeAsBPBOXXogZmhPdlbXKJ%2Br5YTwHgF4LzvkzhOfI9dv3c1WR6j8ynAPAlIfqYMI3Dfn3MfuWWAsBdQvV5wnU9%2B/N59idfUQD4lpA9T9jOYz%2BeZz9yjwLAQ0L3GgH8OnvvGnuP7ygAPE0YXyeQH7PPrrPPeIYCwCnCebzOYW0/jdd5P3GOAsBpQnuuygFu78xVee8wngLASwT5epnC3f5YL9P%2BIAYFgEsEfSwrhoB3HovBz6sUAC4zEGAPw58rftv9AOQnhGA9546r3AAwlNsAmMvgZxQ3AAwlnGAe54uRFACGE1IwnnPFaH4CYCo/CcA1Bj%2BzuAFgKuEFr3N%2BmOntOI7DLQAruA2A5xj8rOAGgGWEGjzmnLCKGwC2cBsAPzP4Wc0NAFsIO/jkPLCDGwC2cxtAVwY/OykAhKEI0IXBTwR%2BAiAMoUgH9jlRuAEgJLcBVGPwE83bx/%2BgBBCRIkB2Bj8Rvb29vSkApKAIkI3BT2QKAOkoAkRn8JOBAkBaigDRGPxkogCQniLAbgY/Gf1UAI5DCSAvRYDVDH6y%2Bpj9CgClKALMZvCTnQJAaYoAoxn8VKEA0IYywKsMfSr6sgAchxJAXYoAzzL4qerHv/1TAGhJGeCWoU8HCgD8P0UAg59OFAD4gjLQh6FPV98WgONQAkAZqMfQp7vbf/ePAgAPKAN5GfrwSQGAC5SB%2BAx9%2BNpTBeA4lAB4hkKwn4EPj90O/%2BNQAGAohWA%2BAx/OUwBgMYXgOgMfrjtVAI5DCYAZlIL7DHsY76vhfxwKAITQsRQY9rCGAgBJZS4Hhjzs91IBOA4lALJYWRQMdsjh3vA/DgUAAMr6rgD8duX/GACI6dH8flgAAIB6FAAAaOipAuBnAADI45m57QYAABp6ugC4BQCA%2BJ6d124AAKChUwXALQAAxHVmTrsBAICGThcAtwAAEM/Z%2BewGAAAaeqkAuAUAgDhemctuAACgoZcLgFsAANjv1Xl86QZACQCAfa7MYT8BAEBDlwuAWwAAWO/q/HUDAAANDSkAbgEAYJ0Rc3fYDYASAADzjZq3fgIAgIaGFgC3AAAwz8g5O/wGQAkAgPFGz9cpPwEoAQAwzoy56m8AAKChaQXALQAAXDdrnk69AVACAOB1M%2Bfo9J8AlAAAOG/2/PQ3AADQ0JIC4BYAAJ63Ym4uuwFQAgDgsVXzculPAEoAANy3ck4u/xsAJQAAfrV6Pm75I0AlAAA%2B7ZiL2/4pACUAAPbNw63/GKASAEBnO%2Bfg9n8PgBIAQEe759/2AnAc%2BxcBAFaKMPdCFIDjiLEYADBblHkXpgAcR5xFAYAZIs25UAXgOGItDgCMEm2%2BhSsAxxFvkQDgiohzLWQBOI6YiwUAZ0WdZ2ELwHHEXTQAeEbkORa6ABxH7MUDgHuiz6/QD3fr/f39ffczAMB3og/%2BD%2BFvAH6UZVEB6CnTnEpVAI4j1%2BIC0Ee2%2BZTqYW/5SQCA3bIN/g/pbgB%2BlHXRAagh8xxKXQCOI/fiA5BX9vmT%2BuFv%2BUkAgNmyD/4P6W8AflTlpQAQU6U5U%2BaD3HIbAMAolQb/h3If6JYiAMCrKg7%2BD6V%2BAvhK5ZcHwDzV50fpD3fLbQAAj1Qf/B9afMhbigAAt7oM/g%2BtPuwtRQCAboP/Q8sPfUsRAOin6%2BD/0PrD31IEAOrrPvg/WIQ7lAGAOgz9X1mQBxQBgLwM/vsszAnKAEB8hv5zLNKLlAGAOAz98yzYAMoAwHqG/jUWbwKFAGA8A38si7mAQgBwnoE/l8XdRCkA%2BGTYr/d/ZjhW27lcffwAAAAASUVORK5CYII%3D%22%2C%20%22sizes%22%3A%20%22512x512%22%2C%20%22type%22%3A%20%22image/png%22%2C%20%22purpose%22%3A%20%22any%20maskable%22%7D%5D%7D">
+
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAG6ElEQVR4nO2dXY7bOgxG6Ytur0spupaiS+kC5z4M1Enc2JFkWvw756lAgVgij7/QdpLZxAEfHx8f1msAHbZt20yPb3FQBK7DasGXHQyJYYXctx4AieGIu+S+5UURGXrRFvs/zRcTQWYYQ9sXtbMDkeEqGmmtktDIDBpoeHTpjEBkuIvZtJ5OaGSGO5n1a0poZIYVzHg2LDQyw0pGfRsSGpnBghHvuoVGZrCk178uoZEZPNDj4VuhkRk88c5H9UffAJacCk06g0fOvDwUGpnBM0d+MnJAKl4KTTpDBF55+o/QyAyR2PvKyAGpeBKadIaIPHpLQkMqvlkvIAs/fv25/Bq/f35XWElt/n4rgHGjHw15e0HyfrbHr7kg9DErBX4Hgh+D0Ad4EvgdCP7FX6GR+ZNIIu9B7E/KCx1Z4iMqy11W6Iwi76kodjmhK4i8p5LYWxWZK4q8p4LYJZ4UIvMnFeqQOqErNHCWrGmdNqGR+Zys9UmX0FkbdSeZ0jqV0NYyXxEj8to9kUbo1UKsECDjnu4mvNCrmu6h2ZX2OktooVc02GNzq+67h7BC39nUSM2kDs+EFPquJkZsYIOafBJO6DsaF61pZ1SvTyihtZsVqVGjVK1VmCeFVRs0i/b+rO+T9xIioTWLmV3kV1Sqn/uErtSMu9Dct/ekdi+0FlVlblTZv+uRgx9vuYfMdXWb0JmLbo1GXbyOHi6FRub7ySq1S6Gvgsx9ZKyTO6GvnvUZm3QnV+vlLaVdCY3MNmSS2pXQV0Dma2SpnxuhPZ3lMI6X/rkQmlHDBxlGDxdCXwGZdYleT3Ohr5zV0YvvlcjfXjcXGkATU6FJZ79ETemQCY3Ma4hYZzOhrWctuBer/oZL6IipEZlo9Q4nNMAZJh/wn3070r5QiZY+I2jv16JnM6T/08hnjWj/l0nsavvds3zkWHmm9x4rywXqnfudPQlW1zbtDD1ayOhSV9vvESmFnm1W1CZX2+8ZIYTOPPNFIkIflgq9IhGuHiNaakXY78qauk/oCKlQCe/9cC80wAgIDalYJnS02RR0WdV/1wk9M69dnfG8z4h7LPbruUauhQYYJaXQswniOXnOqLbfM1IKLTLerOjNrbbfI5YIbXVB2Nu0LM31vt8VHiz5PPTKT3eNrCGLyK9YsV8Pfd2T/vPQjczyvqLafhtpZ2ioCUJDKhAaUoHQkAqEhlQgNKQCoSEVCA2pQGhIBUJDKhAaUoHQkAqEhlS4FZov1frGa3+WCF31o4zwzAoP3CY0wAwIDalAaEiFa6G9XnhUx3NflgnNhWFtVvXfdUIDjILQkAr3Qnue1yrivR9LhWaOrsnKvrtPaBH/qVCFCH0IITRALwgNqVgudJQ/sQvPRPnj9SQ0pMJEaFI6FlHSWaTQz+nO8NhID7ccva3HI0t+8PwVV9L2zmaerctSIqt1ee3TEWYJ/fvndzcjhJd1zNLW7ym1rdZiltAitmd/pLnQ6k8/REtnEeO7HFc2bZWqq487e7yr64wos0jh23YRTqaoUlliLnQEsSyOHXVv1ieSudBXidp4i9f1fmwNXAgd+QJPWwCN17N6cGWdziJOhBaxK4aW1BoXYZYyRz3unjRPCn/8+mNe1NEneZ7e3j2t5Qqm96FfYfW2l6GhlUeNhpuRoxF5nrYEmT9xJ7QG1aSu/K60x6XQlncfokltKbPHWrkUWgSpe0Dmf3F3UbhH621xpgGe35It9+NVZhHHCa2N1SfW7iDbyamJe6E1pcogtbXM3uqxx/3I0dBOGGsxRvGwXu8yiwRI6IZ2MSOlNTL3EyahG3ekpMf7uJ7WFEVmkYBCi9wnkgeJPKzhkUgyiwQVWsRnOjZG1mb1qL+HaDKLBBZaZM1FmsemVt13D6GFFll358FDgyvtdZbwQjdW31Jb0fSMe7qbNEKL2D8Ni/qFX5EcMoskE1rEXoyIZJFZJKHQDcR+TyaRG2GeFI6SsVmaZK1P2oR+hLT+IqvIjbQJ/Uj2JvZSoQ6biEiFlG5UTOsKIjfKCd2oIHYlkRtlhW5kFLuiyI3yQj8SWe7KEj+ytX8g9ReRxEbkL7Zt2xC6A0+CI/AxCD3JSsERuJ8noUWQ+gqZf7wlAs1lhIYUNKFLPCmEOjwJvR9BACLw6C0JDan4R2hSGiKx9/VlQiM1ROCVp4wckIpDoUlp8MyRn6cJjdTgkTMvGTkgFW+FJqXBE+987EpopAYP9HjYPXIgNVjS69/QDI3UYMGId8MXhUgNKxn1beouB1LDCmY8m75th9RwJ7N+qUjJFwNAi6tBqfJghbQGDTQ8UheRtIZRNANR/dE3aQ0jaPtyq3ykNRxxV/AtS1PkhhXv3ibjAXLXYfUI+j9geatbLoIdvgAAAABJRU5ErkJggg==">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <meta name="apple-mobile-web-app-title" content="Cogni">
+
+
+
+    <!-- Biblioteca jsPDF para gerar o relatório -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+
+        :root {
+
+            --primary-color: #6c90b2;
+
+            --primary-dark: #527394;
+
+            --bg-color: #fcfcfc;
+
+            --text-color: #70757a;
+
+            --border-color: #e2e2e2;
+
+            --card-bg: #ffffff;
+
+            --pdf-color: #2b567a;
+
+            --delete-color: #dc3545;
+
+        }
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            -webkit-tap-highlight-color: transparent;
+
+        }
+
+        html, body {
+
+            width: 100%;
+
+            height: 100%;
+
+            height: 100dvh;
+
+            background-color: #eceff1;
+
+            color: #333;
+
+        }
+
+        body {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+        }
+
+        /* Modificado para se comportar como uma aplicação web de tela cheia */
+
+        .app-container {
+
+            width: 100%;
+
+            max-width: 1200px; /* Expande em telas grandes */
+
+            height: 100vh;
+
+            height: 100dvh;
+
+            background-color: var(--bg-color);
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            position: relative;
+
+            padding-top: env(safe-area-inset-top);
+
+            padding-bottom: env(safe-area-inset-bottom);
+
+        }
+
+        @media (min-width: 768px) {
+
+            .app-container {
+
+                height: 90vh; /* Deixa uma margem elegante em desktops */
+
+                border-radius: 12px;
+
+            }
+
+        }
+
+        header {
+
+            background: white;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-bottom: 1px solid var(--border-color);
+
+            position: relative;
+
+            flex-shrink: 0;
+
+        }
+
+        .back-btn {
+
+            position: absolute;
+
+            left: 20px;
+
+            font-size: 28px;
+
+            color: var(--primary-color);
+
+            cursor: pointer;
+
+            background: none;
+
+            border: none;
+
+        }
+
+        .profile-toggle-btn {
+
+            position: absolute;
+
+            right: 20px;
+
+            font-size: 22px;
+
+            background: none;
+
+            border: none;
+
+            cursor: pointer;
+
+            color: var(--primary-color);
+
+        }
+
+        .logo {
+
+            font-size: 20px;
+
+            color: #d6336c;
+
+            font-weight: 500;
+
+            letter-spacing: 0.5px;
+
+            cursor: pointer;
+
+        }
+
+        .nav-tabs {
+
+            display: flex;
+
+            background: #f1f3f5;
+
+            padding: 6px;
+
+            overflow-x: auto;
+
+            flex-shrink: 0;
+
+            justify-content: center; /* Centraliza as abas no desktop */
+
+        }
+
+        @media (max-width: 767px) {
+
+            .nav-tabs {
+
+                justify-content: flex-start;
+
+            }
+
+        }
+
+        .tab-btn {
+
+            padding: 10px 20px;
+
+            background: none;
+
+            border: none;
+
+            color: #888;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            border-radius: 12px;
+
+            white-space: nowrap;
+
+            transition: all 0.2s ease;
+
+        }
+
+        .tab-btn.active {
+
+            background: white;
+
+            color: var(--primary-color);
+
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+        }
+
+        .content-area {
+
+            flex: 1;
+
+            padding: 30px 40px;
+
+            overflow-y: auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            max-width: 800px; /* Alinha o conteúdo em uma largura legível */
+
+            width: 100%;
+
+            margin: 0 auto;
+
+            -webkit-overflow-scrolling: touch;
+
+        }
+
+        @media (max-width: 500px) {
+
+            .content-area {
+
+                padding: 20px;
+
+            }
+
+        }
+
+        .step-title {
+
+            font-size: 22px;
+
+            color: var(--primary-color);
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            font-weight: 400;
+
+        }
+
+        textarea {
+
+            width: 100%;
+
+            height: 180px;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 8px;
+
+            background: white;
+
+            padding: 16px;
+
+            font-size: 16px;
+
+            color: #444;
+
+            resize: none;
+
+            outline: none;
+
+            line-height: 1.5;
+
+        }
+
+        textarea:focus {
+
+            border-color: var(--primary-color);
+
+        }
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 6px;
+
+            flex-shrink: 0;
+
+        }
+
+        .form-group label {
+
+            font-size: 14px;
+
+            color: var(--primary-dark);
+
+            font-weight: 600;
+
+        }
+
+        .form-group input {
+
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            color: #444;
+
+            outline: none;
+
+            background-color: white;
+
+        }
+
+        .form-group input:disabled {
+
+            background-color: #f1f3f5;
+
+            color: #777;
+
+        }
+
+        .form-group input:focus {
+
+            border-color: var(--primary-color);
+
+        }
+
+        .thought-container {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 16px;
+
+            width: 100%;
+
+        }
+
+        .options-list {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Grid responsiva para a web */
+
+            gap: 12px;
+
+        }
+
+        .option-item {
+
+            background: white;
+
+            border: 1px solid var(--border-color);
+
+            border-radius: 25px;
+
+            padding: 12px 20px;
+
+            font-size: 14px;
+
+            color: var(--text-color);
+
+            cursor: pointer;
+
+            text-align: left;
+
+            transition: all 0.2s ease;
+
+        }
+
+        .option-item:hover {
+
+            border-color: var(--primary-color);
+
+            background-color: #f8fafd;
+
+        }
+
+        .option-item.selected {
+
+            background-color: var(--primary-color);
+
+            color: white;
+
+            border-color: var(--primary-color);
+
+        }
+
+        footer {
+
+            padding: 24px;
+
+            padding-bottom: calc(24px + env(safe-area-inset-bottom));
+
+            background: white;
+
+            border-top: 1px solid var(--border-color);
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+        }
+
+        .footer-content {
+
+            width: 100%;
+
+            max-width: 800px;
+
+        }
+
+        .save-btn {
+
+            width: 100%;
+
+            background-color: var(--primary-color);
+
+            color: white;
+
+            border: none;
+
+            border-radius: 6px;
+
+            padding: 16px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: background-color 0.2s;
+
+        }
+
+        .save-btn:hover {
+
+            background-color: var(--primary-dark);
+
+        }
+
+        .pdf-btn {
+
+            width: 100%;
+
+            background-color: white;
+
+            color: var(--pdf-color);
+
+            border: 2px solid var(--pdf-color);
+
+            border-radius: 6px;
+
+            padding: 14px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-bottom: 20px;
+
+            transition: all 0.2s;
+
+        }
+
+        .pdf-btn:hover {
+
+            background-color: var(--pdf-color);
+
+            color: white;
+
+        }
+
+        .summary-card {
+
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            border: 1px solid var(--border-color);
+
+            margin-bottom: 16px;
+
+        }
+
+        .summary-title {
+
+            font-weight: bold;
+
+            color: var(--primary-color);
+
+            margin-bottom: 6px;
+
+            font-size: 15px;
+
+        }
+
+        .history-item {
+
+            background: white;
+
+            padding: 16px;
+
+            border-radius: 8px;
+
+            border: 1px solid var(--border-color);
+
+            margin-bottom: 12px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 16px;
+
+            transition: box-shadow 0.2s;
+
+        }
+
+        .history-item:hover {
+
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+        }
+
+        .history-info {
+
+            flex: 1;
+
+            min-width: 0;
+
+        }
+
+        .history-actions {
+
+            display: flex;
+
+            gap: 10px;
+
+            align-items: center;
+
+        }
+
+        .view-btn {
+
+            background: var(--primary-color);
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 16px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: background-color 0.2s;
+
+        }
+
+        .view-btn:hover {
+
+            background-color: var(--primary-dark);
+
+        }
+
+        .delete-btn {
+
+            background: transparent;
+
+            border: 1px solid var(--border-color);
+
+            color: var(--delete-color);
+
+            padding: 8px 12px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: all 0.2s;
+
+        }
+
+        
+
+        .delete-btn:hover {
+
+            background-color: #fff5f5;
+
+            border-color: var(--delete-color);
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <header>
+
+        <button class="back-btn" onclick="handleBack()">‹</button>
+
+        <div class="logo" onclick="showHistoryScreen()">JULIA ROTTA COGNI</div>
+
+        <button class="profile-toggle-btn" onclick="showProfileScreen()">👤</button>
+
+    </header>
+
+    <div class="nav-tabs" id="navTabs">
+
+        <button class="tab-btn active" onclick="goToStep(0)">Humor</button>
+
+        <button class="tab-btn" onclick="goToStep(1)">Situação</button>
+
+        <button class="tab-btn" onclick="goToStep(2)">Físico</button>
+
+        <button class="tab-btn" onclick="goToStep(3)">Emoções</button>
+
+        <button class="tab-btn" onclick="goToStep(4)">Pensamentos</button>
+
+        <button class="tab-btn" onclick="goToStep(5)">Ações</button>
+
+    </div>
+
+    <div class="content-area" id="contentArea"></div>
+
+    <footer>
+
+        <div class="footer-content" id="appFooter">
+
+            <button class="save-btn" onclick="nextStep()" id="actionBtn">SALVAR</button>
+
+        </div>
+
+    </footer>
+
+</div>
+
+<script>
+
+let appState = {
+
+    currentStep: 0,
+
+    currentView: "history", 
+
+    humor: 3,
+
+    situacao: "",
+
+    dataRegistro: "",
+
+    reacoesFisicas: [],
+
+    emocoes: [],
+
+    pensamento: "",
+
+    acoes: []
+
+};
+
+const defaultDatabase = {
+
+    reacoesFisicas: [
+
+        "Falta de ar", "Tontura", "Sudorese", "Tremores", "Agitação", 
+
+        "Nervosismo", "Palpitações", "Dor no peito", "Sensação de paz", 
+
+        "Cansaço", "Despersonalização", "Desrealização", "Ruborização", 
+
+        "Tensão muscular", "Frio na barriga"
+
+    ],
+
+    emocoes: [
+
+        "Ansioso", "Alegre", "Surpreso", "Amoroso", "Feliz", 
+
+        "Otimista", "Calmo", "Leve", "Orgulhoso", "Excitado", 
+
+        "Constrangido", "Apático"
+
+    ],
+
+    acoes: [
+
+        "Pratiquei atividades físicas", "Pratiquei yoga ou meditação", 
+
+        "Busquei por passeios/lazer", "Consumi álcool", "Fiz compras", 
+
+        "Fumei", "Me isolei socialmente", "Tomei banho", "Me dediquei a hobbies", 
+
+        "Fui dormir", "Não saí da cama", "Busquei atividades \"de adrenalina\"", 
+
+        "Roí as unhas", "Comi mais ou compulsivamente", "Me machuquei propositalmente", 
+
+        "Relações sexuais", "Pesquisei ou planejei suicídio", "Mantive relação sexual desprotegida", 
+
+        "Usei drogas", "Entrei em pânico", "Relaxamento"
+
+    ]
+
+};
+
+function getDatabase() {
+
+    let customs = JSON.parse(localStorage.getItem("cognicopy_custom_options") || '{"reacoesFisicas":[], "emocoes":[], "acoes":[]}');
+
+    return {
+
+        reacoesFisicas: [...customs.reacoesFisicas, ...defaultDatabase.reacoesFisicas],
+
+        emocoes: [...customs.emocoes, ...defaultDatabase.emocoes],
+
+        acoes: [...customs.acoes, ...defaultDatabase.acoes]
+
+    };
+
+}
+
+const moodLabels = ["Humor mais negativo", "Humor negativo", "Nem positivo, nem negativo", "Humor positivo", "Humor mais positivo"];
+
+const steps = [
+
+    { type: "mood", title: "Como você está se sentindo agora?" },
+
+    { type: "text", title: "Situação", placeholder: "Descreva aqui o que provocou suas emoções. O que aconteceu, onde, com quem e quando?" },
+
+    { type: "list", title: "Como seu corpo reagiu?", key: "reacoesFisicas" },
+
+    { type: "list", title: "O que você está sentindo?", key: "emocoes" },
+
+    { type: "thought", title: "O que passou pela sua cabeça?", placeholder: "Insira um novo pensamento aqui..." },
+
+    { type: "list", title: "O que você fez?", key: "acoes" },
+
+    { type: "summary", title: "Resumo do Registro" }
+
+];
+
+function maskBirthDate(input) {
+
+    let v = input.value.replace(/\D/g, "");
+
+    if (v.length > 8) v = v.substring(0, 8);
+
+    
+
+    if (v.length >= 5) {
+
+        input.value = `${v.substring(0, 2)}/${v.substring(2, 4)}/${v.substring(4, 8)}`;
+
+    } else if (v.length >= 3) {
+
+        input.value = `${v.substring(0, 2)}/${v.substring(2, 4)}`;
+
+    } else {
+
+        input.value = v;
+
+    }
+
+    
+
+    const ageDisplay = document.getElementById("calculatedAgeDisplay");
+
+    if (ageDisplay && v.length === 8) {
+
+        ageDisplay.value = calculateAgeDetailed(input.value);
+
+    } else if (ageDisplay) {
+
+        ageDisplay.value = "";
+
+    }
+
+}
+
+function calculateAgeDetailed(birthDateStr) {
+
+    if (!birthDateStr) return "Não informada";
+
+    const parts = birthDateStr.split("/");
+
+    if (parts.length !== 3) return "Não informada";
+
+    
+
+    const day = parseInt(parts[0], 10);
+
+    const month = parseInt(parts[1], 10) - 1;
+
+    const year = parseInt(parts[2], 10);
+
+    
+
+    if (isNaN(day) || isNaN(month) || isNaN(year)) return "Não informada";
+
+    
+
+    const birthDate = new Date(year, month, day);
+
+    const today = new Date();
+
+    
+
+    if (birthDate > today || year < 1900) return "Data inválida";
+
+    let years = today.getFullYear() - birthDate.getFullYear();
+
+    let months = today.getMonth() - birthDate.getMonth();
+
+    let days = today.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+
+        months--;
+
+        const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+
+        days += prevMonth.getDate();
+
+    }
+
+    if (months < 0) {
+
+        years--;
+
+        months += 12;
+
+    }
+
+    let result = [];
+
+    if (years > 0) result.push(`${years} ano${years > 1 ? 's' : ''}`);
+
+    if (months > 0) result.push(`${months} mê${months > 1 ? 'ses' : 's'}`);
+
+    if (days > 0 || result.length === 0) result.push(`${days} dia${days > 1 ? 's' : ''}`);
+
+    return result.join(", ");
+
+}
+
+function render() {
+
+    const container = document.getElementById("contentArea");
+
+    const tabs = document.getElementById("navTabs");
+
+    const footer = document.getElementById("appFooter");
+
+    const currentDb = getDatabase();
+
+    if (appState.currentView === "profile") {
+
+        tabs.style.display = "none";
+
+        footer.innerHTML = `<button class="save-btn" onclick="saveUserProfile()">SALVAR PERFIL</button>`;
+
+        
+
+        let user = JSON.parse(localStorage.getItem("cognicopy_user") || "{}");
+
+        const currentCalculatedAge = user.birth ? calculateAgeDetailed(user.birth) : "";
+
+        
+
+        container.innerHTML = `
+
+            <h2 class="step-title">Cadastro do Usuário</h2>
+
+            <div class="form-group">
+
+                <label>Nome Completo</label>
+
+                <input type="text" id="userName" value="${user.name || ''}" placeholder="Digite seu nome">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Data de Nascimento</label>
+
+                <input type="text" inputmode="numeric" id="userBirth" value="${user.birth || ''}" placeholder="DD/MM/AAAA" oninput="maskBirthDate(this)">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Idade Calculada</label>
+
+                <input type="text" id="calculatedAgeDisplay" value="${currentCalculatedAge}" disabled placeholder="Será calculada automaticamente">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Telefone</label>
+
+                <input type="tel" id="userPhone" value="${user.phone || ''}" placeholder="(00) 00000-0000">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>E-mail</label>
+
+                <input type="email" id="userEmail" value="${user.email || ''}" placeholder="seu@email.com">
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    if (appState.currentView === "history") {
+
+        tabs.style.display = "none";
+
+        footer.innerHTML = `<button class="save-btn" onclick="startNewRegister()">+ NOVO REGISTRO</button>`;
+
+        
+
+        let logs = JSON.parse(localStorage.getItem("cognicopy_logs") || "[]");
+
+        let user = JSON.parse(localStorage.getItem("cognicopy_user") || "{}");
+
+        
+
+        let html = `<h2 class="step-title" style="margin-bottom:20px;">Olá, ${user.name || 'Paciente'}!</h2>`;
+
+        
+
+        if(logs.length === 0) {
+
+            html += `<p style="text-align:center; color:#999; margin-top:40px;">Nenhum registro encontrado. Clique abaixo para começar!</p>`;
+
+        } else {
+
+            logs.forEach((log, index) => {
+
+                html += `
+
+                    <div class="history-item">
+
+                        <div class="history-info">
+
+                            <strong>${log.data}</strong><br>
+
+                            <span style="font-size:13px; color:#777; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">
+
+                                ${log.situacao || "Sem descrição"}
+
+                            </span>
+
+                        </div>
+
+                        <div class="history-actions">
+
+                            <button class="view-btn" onclick="viewSavedLog(${index})">PDF</button>
+
+                            <button class="delete-btn" onclick="deleteLog(${index})" title="Excluir Registro">🗑️</button>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+        container.innerHTML = html;
+
+        return;
+
+    }
+
+    tabs.style.display = "flex";
+
+    const step = steps[appState.currentStep];
+
+    
+
+    document.querySelectorAll(".tab-btn").forEach((btn, i) => {
+
+        btn.classList.toggle("active", i === appState.currentStep);
+
+    });
+
+    footer.innerHTML = `<button class="save-btn" onclick="nextStep()" id="actionBtn">${appState.currentStep === steps.length - 1 ? 'CONCLUIR E SALVAR' : 'SALVAR'}</button>`;
+
+    if (step.type === "mood") {
+
+        const moodConfig = [
+
+            { label: moodLabels[0], color: "#e893b3", mouth: "M 110 175 Q 150 145 190 175" },
+
+            { label: moodLabels[1], color: "#b39ddb", mouth: "M 115 168 L 185 168" },
+
+            { label: moodLabels[2], color: "#6c90b2", mouth: "M 115 168 L 185 168" },
+
+            { label: moodLabels[3], color: "#6c90b2", mouth: "M 110 165 Q 150 200 190 165" },
+
+            { label: moodLabels[4], color: "#e3c95c", mouth: "M 110 165 Q 150 200 190 165" }
+
+        ];
+
+        const nivel = appState.humor;
+
+        const cfg = moodConfig[nivel];
+
+        const olhosEstrela = nivel === 4;
+
+        const eyeSvg = (cx) => olhosEstrela
+
+            ? `<path transform="translate(${cx},135)" d="M0,-14 L4,-4 L14,0 L4,4 L0,14 L-4,4 L-14,0 L-4,-4 Z" fill="${cfg.color}"/>`
+
+            : `<circle cx="${cx}" cy="135" r="9" fill="${cfg.color}"/>`;
+
+        const nomeUsuario = JSON.parse(localStorage.getItem("cognicopy_user") || "{}").name || "";
+
+        container.innerHTML = `
+
+            <h2 class="step-title" style="color:${cfg.color};">${nomeUsuario}${nomeUsuario ? ',' : ''} Como você está se sentindo agora?</h2>
+
+            <div style="display:flex; align-items:center; justify-content:center; gap:24px; margin:20px 0;">
+
+                <svg width="220" height="220" viewBox="0 0 300 300">
+
+                    <circle cx="150" cy="150" r="135" fill="none" stroke="${cfg.color}" stroke-width="22"/>
+
+                    ${eyeSvg(115)}${eyeSvg(185)}
+
+                    <path d="${cfg.mouth}" fill="none" stroke="${cfg.color}" stroke-width="14" stroke-linecap="round"/>
+
+                </svg>
+
+                <input type="range" id="moodSlider" min="0" max="4" step="1" value="${nivel}"
+
+                    style="writing-mode: vertical-lr; direction: rtl; width:8px; height:180px; accent-color:${cfg.color};">
+
+            </div>
+
+            <p style="text-align:center; color:${cfg.color}; font-size:15px; margin-top:8px;">${cfg.label}</p>
+
+        `;
+
+        document.getElementById("moodSlider").addEventListener("input", (e) => { appState.humor = parseInt(e.target.value); render(); });
+
+    } else if (step.type === "text") {
+
+        container.innerHTML = `
+
+            <h2 class="step-title">${step.title}</h2>
+
+            <label style="display:block; margin-bottom:6px; font-size:14px; color:var(--text-color, #555);">Quando isso aconteceu?</label>
+
+            <input type="datetime-local" id="dataInput" value="${appState.dataRegistro}" style="width:100%; padding:10px; margin-bottom:16px; border:1px solid var(--border-color, #ccc); border-radius:10px; font-size:14px;">
+
+            <textarea id="textInput" placeholder="${step.placeholder}">${appState.situacao}</textarea>
+
+        `;
+
+        document.getElementById("dataInput").addEventListener("input", (e) => appState.dataRegistro = e.target.value);
+
+        document.getElementById("textInput").addEventListener("input", (e) => appState.situacao = e.target.value);
+
+    } else if (step.type === "thought") {
+
+        container.innerHTML = `
+
+            <h2 class="step-title">${step.title}</h2>
+
+            <div class="thought-container">
+
+                <textarea id="textInput" placeholder="${step.placeholder}">${appState.pensamento}</textarea>
+
+            </div>
+
+        `;
+
+        document.getElementById("textInput").addEventListener("input", (e) => appState.pensamento = e.target.value);
+
+    } else if (step.type === "list") {
+
+        let listHtml = `
+
+            <h2 class="step-title">${step.title}</h2>
+
+            
+
+            <div class="form-group" style="flex-direction: row; gap: 8px; margin-bottom: 20px;">
+
+                <input type="text" id="customItemInput" placeholder="Inserir novo item personalizado..." style="flex: 1;">
+
+                <button onclick="addCustomItem('${step.key}')" style="background: #6c90b2; color: white; border: none; padding: 0 20px; border-radius: 8px; font-weight: bold; cursor: pointer;">+</button>
+
+            </div>
+
+            <div class="options-list">
+
+        `;
+
+        
+
+        currentDb[step.key].forEach(item => {
+
+            const isSel = appState[step.key].includes(item);
+
+            listHtml += `<button class="option-item ${isSel ? 'selected' : ''}" onclick="toggleOption('${step.key}', '${item}')">${item}</button>`;
+
+        });
+
+        container.innerHTML = listHtml + `</div>`;
+
+    } else if (step.type === "summary") {
+
+        container.innerHTML = `
+
+            <h2 class="step-title">${step.title}</h2><br>
+
+            <button class="pdf-btn" onclick="gerarPDF(appState)">📄 BAIXAR PDF IMEDIATAMENTE</button>
+
+            <div class="summary-card"><div class="summary-title">Humor</div><div>${moodLabels[appState.humor]}</div></div>
+
+            <div class="summary-card"><div class="summary-title">Situação</div><div>${appState.situacao || "Não informada"}</div></div>
+
+            <div class="summary-card"><div class="summary-title">Físico</div><div>${appState.reacoesFisicas.join(", ") || "Nenhum"}</div></div>
+
+            <div class="summary-card"><div class="summary-title">Emoções</div><div>${appState.emocoes.join(", ") || "Nenhuma"}</div></div>
+
+            <div class="summary-card"><div class="summary-title">Pensamento</div><div>${appState.pensamento || "Não informado"}</div></div>
+
+            <div class="summary-card"><div class="summary-title">Ações</div><div>${appState.acoes.join(", ") || "Nenhuma"}</div></div>
+
+        `;
+
+    }
+
+}
+
+function addCustomItem(key) {
+
+    const input = document.getElementById("customItemInput");
+
+    const valor = input.value.trim();
+
+    
+
+    if (valor === "") return;
+
+    let customs = JSON.parse(localStorage.getItem("cognicopy_custom_options") || '{"reacoesFisicas":[], "emocoes":[], "acoes":[]}');
+
+    
+
+    if (!defaultDatabase[key].includes(valor) && !customs[key].includes(valor)) {
+
+        customs[key].unshift(valor);
+
+        localStorage.setItem("cognicopy_custom_options", JSON.stringify(customs));
+
+    }
+
+    
+
+    if (!appState[key].includes(valor)) {
+
+        appState[key].push(valor);
+
+    }
+
+    
+
+    input.value = "";
+
+    render();
+
+}
+
+function showProfileScreen() { appState.currentView = "profile"; render(); }
+
+function saveUserProfile() {
+
+    const userData = {
+
+        name: document.getElementById("userName").value.trim(),
+
+        birth: document.getElementById("userBirth").value.trim(),
+
+        phone: document.getElementById("userPhone").value.trim(),
+
+        email: document.getElementById("userEmail").value.trim()
+
+    };
+
+    localStorage.setItem("cognicopy_user", JSON.stringify(userData));
+
+    alert("Dados cadastrais salvos!");
+
+    showHistoryScreen();
+
+}
+
+function startNewRegister() {
+
+    appState.currentView = "register"; appState.currentStep = 0; appState.situacao = "";
+
+    appState.humor = 3;
+
+    appState.dataRegistro = new Date().toISOString().slice(0,16);
+
+    appState.reacoesFisicas = []; appState.emocoes = []; appState.pensamento = "";
+
+    appState.acoes = [];
+
+    render();
+
+}
+
+function showHistoryScreen() { appState.currentView = "history"; render(); }
+
+function handleBack() {
+
+    if(appState.currentView !== "register") showHistoryScreen();
+
+    else if(appState.currentStep > 0) { appState.currentStep--; render(); }
+
+    else showHistoryScreen();
+
+}
+
+function nextStep() {
+
+    if (appState.currentStep < steps.length - 1) {
+
+        appState.currentStep++; render();
+
+    } else {
+
+        let logs = JSON.parse(localStorage.getItem("cognicopy_logs") || "[]");
+
+        let dataFormatada = appState.dataRegistro ? new Date(appState.dataRegistro).toLocaleDateString('pt-BR') + " " + new Date(appState.dataRegistro).toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'}) : new Date().toLocaleDateString('pt-BR') + " " + new Date().toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'});
+
+        logs.push({
+
+            data: dataFormatada,
+
+            humor: appState.humor, situacao: appState.situacao, reacoesFisicas: appState.reacoesFisicas, emocoes: appState.emocoes,
+
+            pensamento: appState.pensamento, acoes: appState.acoes
+
+        });
+
+        localStorage.setItem("cognicopy_logs", JSON.stringify(logs));
+
+        alert("Registro salvo no histórico!");
+
+        showHistoryScreen();
+
+    }
+
+}
+
+function deleteLog(index) {
+
+    if (confirm("Tem certeza que deseja excluir este registro permanentemente?")) {
+
+        let logs = JSON.parse(localStorage.getItem("cognicopy_logs") || "[]");
+
+        logs.splice(index, 1);
+
+        localStorage.setItem("cognicopy_logs", JSON.stringify(logs));
+
+        render();
+
+    }
+
+}
+
+function goToStep(idx) { appState.currentStep = idx; render(); }
+
+function toggleOption(key, item) {
+
+    let arr = appState[key]; let idx = arr.indexOf(item);
+
+    if(idx > -1) arr.splice(idx, 1); else arr.push(item);
+
+    render();
+
+}
+
+function viewSavedLog(index) {
+
+    let logs = JSON.parse(localStorage.getItem("cognicopy_logs") || "[]");
+
+    gerarPDF(logs[index]);
+
+}
+
+function gerarPDF(dados) {
+
+    const { jsPDF } = window.jspdf;
+
+    const doc = new jsPDF();
+
+    let user = JSON.parse(localStorage.getItem("cognicopy_user") || "{}");
+
+    const calculadoIdade = calculateAgeDetailed(user.birth);
+
+    
+
+    doc.setFillColor(108, 144, 178); doc.rect(0, 0, 210, 32, 'F');
+
+    doc.setTextColor(255, 255, 255); doc.setFont("Helvetica", "bold"); doc.setFontSize(24); doc.text("JULIA ROTTA COGNI", 15, 22);
+
+    doc.setFontSize(10); doc.setFont("Helvetica", "normal"); doc.text("Relatório de Registro Comportamental Cognitivo", 15, 28);
+
+    
+
+    doc.setFillColor(241, 243, 245); doc.rect(15, 40, 180, 28, 'F'); doc.setDrawColor(226, 226, 226); doc.rect(15, 40, 180, 28, 'S');
+
+    doc.setTextColor(50, 50, 50); doc.setFontSize(10);
+
+    doc.setFont("Helvetica", "bold"); doc.text("Nome:", 20, 47); doc.setFont("Helvetica", "normal"); doc.text(`${user.name || "Não cadastrado"}`, 33, 47);
+
+    
+
+    doc.setFont("Helvetica", "bold"); doc.text("Nascimento:", 115, 47); doc.setFont("Helvetica", "normal"); doc.text(`${user.birth || "Não informado"}`, 138, 47);
+
+    
+
+    doc.setFont("Helvetica", "bold"); doc.text("Telefone:", 20, 54); doc.setFont("Helvetica", "normal"); doc.text(`${user.phone || "Não cadastrado"}`, 38, 54);
+
+    doc.setFont("Helvetica", "bold"); doc.text("Idade Atual:", 115, 54); doc.setFont("Helvetica", "normal"); doc.text(`${calculadoIdade}`, 136, 54);
+
+    
+
+    doc.setFont("Helvetica", "bold"); doc.text("E-mail:", 20, 61); doc.setFont("Helvetica", "normal"); doc.text(`${user.email || "Não cadastrado"}`, 35, 61);
+
+    doc.setFont("Helvetica", "bold"); doc.text("Data Reg.:", 115, 61); doc.setFont("Helvetica", "normal"); doc.text(`${dados.data || new Date().toLocaleDateString('pt-BR')}`, 135, 61);
+
+    let y = 82;
+
+    const imprimirSecao = (titulo, conteudo) => {
+
+        doc.setFont("Helvetica", "bold"); doc.setFontSize(12); doc.setTextColor(82, 115, 148); doc.text(titulo, 15, y); y += 6;
+
+        doc.setFont("Helvetica", "normal"); doc.setFontSize(11); doc.setTextColor(40, 40, 40);
+
+        const linhas = doc.splitTextToSize(conteudo || "Nenhum dado registrado nesta etapa.", 175);
+
+        doc.text(linhas, 15, y); y += (linhas.length * 6) + 10;
+
+    };
+
+    imprimirSecao("1. HUMOR REGISTRADO", typeof dados.humor === "number" ? moodLabels[dados.humor] : "Não informado");
+
+    imprimirSecao("2. SITUAÇÃO OCORRIDA", dados.situacao);
+
+    imprimirSecao("3. REAÇÕES FÍSICAS E SINTOMAS", dados.reacoesFisicas.join(", "));
+
+    imprimirSecao("4. ESTADO EMOCIONAL", dados.emocoes.join(", "));
+
+    imprimirSecao("5. PENSAMENTO", dados.pensamento);
+
+    imprimirSecao("6. AÇÕES E COMPORTAMENTOS GERADOS", dados.acoes.join(", "));
+
+    doc.save(`cognicopy-registro-${(dados.data || 'novo').replace(/[\/ :]/g, '-')}.pdf`);
+
+}
+
+showHistoryScreen();
+
+</script>
+
+</body>
+
+</html>
